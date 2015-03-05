@@ -1,4 +1,5 @@
-<%= form_for @movie, new_movie_path do |f| %>
+<%= form_for @movie do |f| %>
   <%= f.label "Movie" %>
-  <%= f.text_field :movie %>
+  <%= f.text_field :title %>
+  <%= f.submit "Search" %>
 <% end %>
