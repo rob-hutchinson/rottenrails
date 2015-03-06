@@ -1,0 +1,27 @@
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover col-sm-12">
+      <thead>
+        <div class="page-header">
+          <h1> Movie Boards<small></small></h1>
+        </div>     
+      </thead>
+      <tr>
+        <th>Poster</th>
+        <th>Title</th>
+        <th>Release Date</th>
+        <th>Synopsis</th>
+      </tr>
+      <% if @movies != [] %>
+        <% @movies.each do |movie| %>
+        <tr>
+          <td><img src=<%=movie.poster%> height="90", width="65"></td>
+          <td><%=link_to movie.title, movie_path(movie)  %></a></td>
+          <td><%= movie.released %></a></td>
+          <td><%= movie.plot %></td>
+        </tr>
+        <% end %>
+      <% end %>
+    </table>
+</div>
+</div>

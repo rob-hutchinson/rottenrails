@@ -84,4 +84,16 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+
+  def create_user! attrs={}
+      attrs[:email]    ||= 'brit@kingcons.io'
+      attrs[:password] ||= 'password'
+      User.create! attrs
+  end
+
+  def create_movie! attrs={}
+    attrs[:title]     ||= 'Frozen'
+    Movie.create! attrs
+  end
+
 end

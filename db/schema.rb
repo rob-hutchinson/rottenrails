@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150304211933) do
+ActiveRecord::Schema.define(version: 20150306165445) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
@@ -26,13 +26,26 @@ ActiveRecord::Schema.define(version: 20150304211933) do
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "movies", force: :cascade do |t|
-    t.string   "title",        null: false
-    t.string   "thumbnail",    null: false
-    t.string   "synopsis",     null: false
-    t.integer  "rotten_id",    null: false
-    t.datetime "release_date"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "title"
+    t.integer  "year"
+    t.string   "rated"
+    t.datetime "released"
+    t.string   "runtime"
+    t.string   "genre"
+    t.string   "director"
+    t.string   "writer"
+    t.string   "actors"
+    t.text     "plot"
+    t.string   "language"
+    t.string   "country"
+    t.string   "awards"
+    t.string   "poster"
+    t.integer  "metascore"
+    t.float    "imdb_rating"
+    t.integer  "imdb_votes"
+    t.string   "imdb_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
